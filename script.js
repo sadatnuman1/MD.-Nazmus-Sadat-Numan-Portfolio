@@ -14,10 +14,36 @@ const PROFICIENCY = [
   ["NLP & Machine Learning", 78],
 ];
 const PROJECTS = [
-  { title:"Solix Clothing Brand Backend API", category:"Backend · E-commerce", stack:["NestJS","TypeScript","PostgreSQL","JWT"],
-    desc:"Production-ready RESTful backend for an e-commerce clothing platform. Modular architecture with JWT authentication and role-based access control. Normalized PostgreSQL schemas covering users, products, orders, payments, and cart workflows.",
-    highlights:["RESTful API Architecture","JWT Auth & RBAC","PostgreSQL Schema Design","Modular NestJS Structure","Order & Payment Flows","Production-Ready"],
-    href:"https://github.com/sadatnuman/Solix-Clothing-Brand-Backend-API-System" },
+  {
+  title:"Solix Clothing Brand Full-Stack E-commerce Platform",
+  category:"Full-Stack · E-commerce",
+  stack:["NestJS","Next.js","React","TypeScript","PostgreSQL","JWT"],
+  desc:"Full-stack e-commerce platform featuring a NestJS REST API and Next.js + React frontend. Implements JWT authentication, role-based access control, normalized PostgreSQL schema, complete cart-to-order lifecycle, and multi-method payment workflows.",
+  highlights:[
+    "Full-Stack Architecture",
+    "JWT Authentication & RBAC",
+    "PostgreSQL Database Design",
+    "Cart, Order & Payment Workflow",
+    "Admin Analytics Dashboard",
+    "Production-Ready"
+  ],
+  href:"https://github.com/sadatnuman/Solix-Clothing-Brand.git"
+},
+  {
+  title:"NewsArchive ASP.NET Core MVC System",
+  category:"Backend · Web Application",
+  stack:["ASP.NET Core MVC","C#","SQL Server","Entity Framework"],
+  desc:"3-tier ASP.NET Core MVC news management system with Repository Pattern and Dependency Injection. Includes advanced search, analytics dashboard, trending algorithm, recommendations, and role-based authentication.",
+  highlights:[
+    "3-Tier Architecture (DAL/BLL/Presentation)",
+    "Repository Pattern & DI",
+    "Advanced Search & Filtering",
+    "Trending & Recommendation Engine",
+    "Analytics Dashboard",
+    "RBAC Authentication"
+  ],
+  href:"https://github.com/sadatnuman/News-Archive-.Net-Core-MVC-3-tier-Architecture-.git"
+},
   { title:"University Admission Management System", category:"Database · Enterprise", stack:["Oracle SQL","PL/SQL"],
     desc:"Comprehensive admission lifecycle database built in Oracle. Fully normalized schemas modeling applicants, departments, programs, evaluations, and payments — automated with stored procedures, packages, and triggers to maintain data integrity.",
     highlights:["Oracle SQL & PL/SQL","Fully Normalized Schema","Stored Procedures","Triggers & Packages","Relational Modeling","Enterprise-Grade Design"],
