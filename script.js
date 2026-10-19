@@ -152,17 +152,54 @@ const CERTS = [
   { icon:"i-users", title:"IEEE Student Member", org:"IEEE", year:"2025" },
   { icon:"i-users", title:"IEEE Computer Society Member", org:"IEEE Computer Society", year:"2025" },
 ];
-const INTERESTS = ["Backend Development","Reinforcement Learning","AI & NLP","Database Systems","REST API Architecture","Software Engineering","Technical Mentoring","Continuous Learning"];
+const INTERESTS = ["Backend Development","Reinforcement Learning","AI & NLP","Database Systems","REST API Architecture","Software Engineering","Requirements Engineering","Technical Mentoring","Continuous Learning"];
 
 // ---------- Helpers ----------
 const $ = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
 const el = (html) => { const t = document.createElement("template"); t.innerHTML = html.trim(); return t.content.firstElementChild; };
 
+// Brand marks from Devicon; generic concepts intentionally remain text-only.
+const SKILL_LOGOS = {
+  "JWT": "jsonwebtokens",
+  "TypeScript": "typescript",
+  "JavaScript": "javascript",
+  "Python": "python",
+  "PHP": "php",
+  "C#": "csharp",
+  "Java": "java",
+  "C++": "cplusplus",
+  "React": "react",
+  "Next.js": "nextjs",
+  "Vue 3": "vuejs",
+  "HTML5": "html5",
+  "CSS3": "css3",
+  "Tailwind CSS": "tailwindcss",
+  "NestJS": "nestjs",
+  "Laravel": "laravel",
+  "Node.js": "nodejs",
+  "ASP.NET Core MVC": "dotnetcore",
+  "PostgreSQL": "postgresql",
+  "MySQL": "mysql",
+  "MongoDB": "mongodb",
+  "Oracle Database": "oracle",
+  "SQL Server": "microsoftsqlserver",
+  "Prisma": "prisma",
+  "Git": "git",
+  "GitHub": "github",
+  "Git CLI": "git",
+  "Postman": "postman",
+  "Docker": "docker",
+  "Vercel": "vercel",
+  "Cloudflare": "cloudflare",
+  "macOS (Unix-based)": "apple",
+  "Windows 11": "windows11"
+};
+
 // ---------- Render: Skills ----------
 const skillsRoot = $("#skill-groups");
 SKILL_GROUPS.forEach(g => {
-  const items = g.items.map(i => `<span class="rounded-lg border border-border bg-surface px-3 py-1.5 text-sm text-foreground transition-all hover:border-primary/50 hover:bg-primary/10 hover:text-primary cursor-default">${i}</span>`).join("");
+  const items = g.items.map(i => `<span class="skill-chip rounded-lg border border-border bg-surface px-3 py-1.5 text-sm text-foreground transition-all hover:border-primary/50 hover:bg-primary/10 hover:text-primary cursor-default">${SKILL_LOGOS[i] ? `<span class="skill-logo"><img src="assets/skills/${SKILL_LOGOS[i]}.svg" alt="" width="24" height="24" loading="lazy" /></span>` : ""}<span>${i}</span></span>`).join("");
   skillsRoot.appendChild(el(`
     <div class="reveal glass rounded-2xl p-5">
       <div class="mb-3 flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-primary">
@@ -188,8 +225,8 @@ PROFICIENCY.forEach(([label, val]) => {
 });
 
 // ---------- Render: Projects ----------
-const projRoot = $("#projects-grid");
 PROJECTS.forEach(p => {
+  const projRoot = $(p.category.startsWith("Professional") ? "#professional-projects-grid" : "#projects-grid");
   const highlights = p.highlights.slice(0,4).map(h=>`<span class="rounded-md bg-primary/10 px-2 py-1 text-[11px] font-medium text-primary">${h}</span>`).join("");
   const stack = p.stack.map(s=>`<span class="rounded border border-border px-2 py-0.5 text-[11px] text-muted-foreground">${s}</span>`).join("");
   projRoot.appendChild(el(`
@@ -262,7 +299,7 @@ $("#year").textContent = new Date().getFullYear();
 
 // ---------- Typing animation ----------
 (function(){
-  const roles = ["Software Engineer","Full-Stack Developer","SaaS Developer","Backend Developer","Problem Solver"];
+  const roles = ["Software Engineer","Full-Stack Developer","SaaS Developer","Backend Developer","Database Administrator","REST API Developer","NestJS Developer","Problem Solver"];
   const target = $("#typed");
   let i=0, len=0, del=false;
   function step(){
@@ -343,4 +380,26 @@ $("#year").textContent = new Date().getFullYear();
     const io2 = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ profCard.querySelectorAll(".prof-bar").forEach(b=>b.style.width=b.dataset.val+"%"); io2.disconnect(); } }), { threshold:0.2 });
     io2.observe(profCard);
   }
+})();
+
+// ---------- In-page CV preview ----------
+(function () {
+  const dialog = document.getElementById("cv-preview");
+  const trigger = document.getElementById("preview-cv");
+  const frame = document.getElementById("cv-preview-frame");
+  trigger.addEventListener("click", () => {
+    if (!frame.getAttribute("src")) frame.src = frame.dataset.src;
+    dialog.showModal();
+    document.documentElement.classList.add("cv-preview-open");
+    document.getElementById("close-cv").focus();
+  });
+  document.getElementById("close-cv").addEventListener("click", () => dialog.close());
+  dialog.addEventListener("click", (event) => {
+    const bounds = dialog.getBoundingClientRect();
+    if (event.target === dialog && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) dialog.close();
+  });
+  dialog.addEventListener("close", () => {
+    document.documentElement.classList.remove("cv-preview-open");
+    trigger.focus();
+  });
 })();
