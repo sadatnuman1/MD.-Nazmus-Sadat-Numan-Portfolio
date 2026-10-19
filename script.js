@@ -1,10 +1,75 @@
 // ---------- Data (mirrors the original React components) ----------
 const SKILL_GROUPS = [
-  { title: "Languages", items: ["C++", "Java", "C#", "JavaScript", "TypeScript", "Python"] },
-  { title: "Backend & Web", items: ["NestJS", "REST APIs", ".NET Core MVC", "Next.js", "PHP", "ES6", "HTML", "CSS"] },
-  { title: "Databases", items: ["PostgreSQL", "Oracle SQL", "MySQL", "SQL Server", "MongoDB", "PL/SQL"] },
-  { title: "Tools", items: ["Git", "GitHub", "Postman", "OpenGL", "MATLAB", "Figma", "Cisco Packet Tracer"] },
-  { title: "Core CS", items: ["OOP", "DSA", "DBMS", "Networks", "Backend Architecture", "JWT Auth", "RBAC", "SDLC"] },
+  {
+    "title": "Programming",
+    "items": [
+      "TypeScript",
+      "JavaScript",
+      "Python",
+      "PHP",
+      "C#",
+      "Java",
+      "C++",
+      "SQL",
+      "PL/SQL"
+    ]
+  },
+  {
+    "title": "Frontend",
+    "items": [
+      "React",
+      "Next.js",
+      "Vue 3",
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS"
+    ]
+  },
+  {
+    "title": "Backend",
+    "items": [
+      "NestJS",
+      "Laravel",
+      "Node.js",
+      "ASP.NET Core MVC",
+      "REST APIs",
+      "JWT",
+      "RBAC"
+    ]
+  },
+  {
+    "title": "Data & ORM",
+    "items": [
+      "PostgreSQL",
+      "MySQL",
+      "MongoDB",
+      "Oracle Database",
+      "SQL Server",
+      "Prisma",
+      "Eloquent"
+    ]
+  },
+  {
+    "title": "Tools & Platforms",
+    "items": [
+      "Git",
+      "GitHub",
+      "Git CLI",
+      "Terminal",
+      "Shell Commands",
+      "Postman",
+      "Docker",
+      "Vercel",
+      "Cloudflare"
+    ]
+  },
+  {
+    "title": "Operating Systems",
+    "items": [
+      "macOS (Unix-based)",
+      "Windows 11"
+    ]
+  }
 ];
 const PROFICIENCY = [
   ["Backend Development", 92],
@@ -14,6 +79,10 @@ const PROFICIENCY = [
   ["NLP & Machine Learning", 78],
 ];
 const PROJECTS = [
+{"title": "Expert HRMS (SHOCHOL)", "category": "Professional \u00b7 Ongoing Development", "stack": ["Laravel 12", "Vue 3", "TypeScript", "MySQL", "Docker", "Cloudflare"], "desc": "Independently developing a multi-tenant HRMS with isolated tenant databases, subdomain-based workspaces, and role-based authorization. Implementing employee management, attendance, leave approvals, payroll, income-tax processing, audit logs, and secure PDF documents.", "highlights": ["Multi-tenant HRMS", "Isolated Tenant Databases", "Payroll & Income Tax", "Role-based Authorization"], "href": "https://shochol.xyz/", "linkLabel": "Live site"},
+{"title": "Expert ATS", "category": "Professional \u00b7 Ongoing Development", "stack": ["Next.js 16", "React 19", "NestJS 12", "TypeScript", "PostgreSQL", "Prisma"], "desc": "Independently building a multi-tenant applicant tracking platform with organization workspaces, job publishing, recruitment pipelines, and permission-based access. Developing secure REST APIs, candidate profiles, resume processing, and consent-aware AI-assisted recruitment and shortlisting.", "highlights": ["Organization Workspaces", "Recruitment Pipelines", "Secure REST APIs", "Consent-aware AI"], "href": null, "linkLabel": "Private project"},
+{"title": "Byte Innovations Corporate Website", "category": "Professional \u00b7 Live", "stack": ["Next.js 16", "React 19", "JavaScript", "MongoDB Atlas", "Nodemailer", "Vercel"], "desc": "Independently designed, developed, and deployed a responsive corporate website with services, portfolio showcases, and Google Analytics. Built dynamic MongoDB job listings, career applications with resume uploads, validated contact forms, and SMTP email notifications.", "highlights": ["Independent Delivery", "Career Portal", "Resume Uploads", "SMTP Notifications"], "href": "https://www.b-innovations.com/", "linkLabel": "Live site"},
+{"title": "Expert POS", "category": "Professional \u00b7 Team Collaboration", "stack": ["Laravel", "PHP", "MySQL", "JavaScript"], "desc": "Contributed to selected development tasks and enhancements in a shared Laravel-based POS and business management application. Collaborated with team members on sales, inventory, purchasing, accounting, and multi-location operations.", "highlights": ["Team Collaboration", "Sales & Inventory", "Business Management", "Multi-location Operations"], "href": "https://expertpos.xyz/", "linkLabel": "Live site"},
   {
   title:"Solix Clothing Brand Full-Stack E-commerce Platform",
   category:"Full-Stack · E-commerce",
@@ -74,7 +143,7 @@ const PROJECTS = [
     href:"https://github.com/sadatnuman/Vidyasagar-Book-Store-Management-System" },
 ];
 const TIMELINE = [
-  { school:"American International University-Bangladesh (AIUB)", degree:"BSc in Computer Science & Engineering", meta:"Final Semester · CGPA 3.71 / 4.00", location:"Dhaka, Bangladesh", period:"Present" },
+  { school:"American International University-Bangladesh (AIUB)", degree:"BSc in Computer Science & Engineering", meta:"Final Year · Major: Software Engineering · CGPA 3.70 / 4.00", location:"Dhaka, Bangladesh", period:"2026" },
   { school:"Trust College, Uttara", degree:"Higher Secondary Certificate (Science)", meta:"GPA 5.00 / 5.00", location:"Dhaka, Bangladesh", period:"2021" },
   { school:"Pangsha Government George Model High School", degree:"Secondary School Certificate (Science)", meta:"GPA 4.61 / 5.00", location:"Pangsha, Bangladesh", period:"2019" },
 ];
@@ -124,7 +193,7 @@ PROJECTS.forEach(p => {
   const highlights = p.highlights.slice(0,4).map(h=>`<span class="rounded-md bg-primary/10 px-2 py-1 text-[11px] font-medium text-primary">${h}</span>`).join("");
   const stack = p.stack.map(s=>`<span class="rounded border border-border px-2 py-0.5 text-[11px] text-muted-foreground">${s}</span>`).join("");
   projRoot.appendChild(el(`
-    <a href="${p.href}" target="_blank" rel="noreferrer" class="reveal group relative flex flex-col overflow-hidden rounded-2xl glass p-6 transition-all hover:-translate-y-1.5 hover:border-primary/50">
+    <${p.href ? 'a' : 'article'} ${p.href ? `href="${p.href}" target="_blank" rel="noreferrer"` : ''} class="reveal group relative flex flex-col overflow-hidden rounded-2xl glass p-6 transition-all hover:-translate-y-1.5 hover:border-primary/50">
       <div class="pointer-events-none absolute -top-24 -right-24 h-48 w-48 rounded-full bg-primary/0 blur-3xl transition-all duration-500 group-hover:bg-primary/30"></div>
       <div class="relative flex items-start justify-between gap-3">
         <div>
@@ -140,10 +209,10 @@ PROJECTS.forEach(p => {
       <div class="relative mt-5 flex items-center justify-between border-t border-border pt-4">
         <div class="flex flex-wrap gap-1.5">${stack}</div>
         <span class="flex items-center gap-1.5 text-xs text-muted-foreground transition-colors group-hover:text-primary">
-          <svg class="h-4 w-4"><use href="#i-github"/></svg> Source
+          <svg class="h-4 w-4"><use href="#${p.linkLabel === 'Live site' ? 'i-arrowup' : p.href ? 'i-github' : 'i-code2'}"/></svg> ${p.linkLabel || 'Source'}
         </span>
       </div>
-    </a>`));
+    </${p.href ? 'a' : 'article'}>`));
 });
 
 // ---------- Render: Timeline ----------
@@ -193,7 +262,7 @@ $("#year").textContent = new Date().getFullYear();
 
 // ---------- Typing animation ----------
 (function(){
-  const roles = ["Backend Engineer","Database Administrator","REST API Developer","NestJS Developer","Problem Solver"];
+  const roles = ["Software Engineer","Full-Stack Developer","SaaS Developer","Backend Developer","Problem Solver"];
   const target = $("#typed");
   let i=0, len=0, del=false;
   function step(){
@@ -254,20 +323,6 @@ $("#year").textContent = new Date().getFullYear();
   function set(o){ open=o; menu.classList.toggle("hidden", !o); icon.innerHTML = o?opened:closed; }
   btn.addEventListener("click", () => set(!open));
   menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => set(false)));
-})();
-
-// ---------- Contact form -> mailto ----------
-(function(){
-  const form = $("#contact-form");
-  const label = $("#send-label");
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const f = new FormData(form);
-    const subject = encodeURIComponent(String(f.get("subject") || "Hello Numan"));
-    const body = encodeURIComponent(`From: ${f.get("name")} <${f.get("email")}>\n\n${f.get("message")}`);
-    window.location.href = `mailto:nazmussadatnuman92@gmail.com?subject=${subject}&body=${body}`;
-    label.textContent = "Opening your email...";
-  });
 })();
 
 // ---------- Reveal-on-scroll + proficiency bar fill ----------
