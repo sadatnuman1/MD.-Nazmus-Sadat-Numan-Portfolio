@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Md. Nazmus Sadat Numan — Software Engineer</title>
-<meta name="description" content="Software Engineer and AIUB CSE student building full-stack applications and multi-tenant SaaS at Byte Innovations. Backend APIs, relational databases, and reinforcement learning research." />
-<meta property="og:title" content="Md. Nazmus Sadat Numan — Software Engineer Portfolio" />
+<title>Md. Nazmus Sadat Numan — Software Engineering</title>
+<meta name="description" content="Software Engineering portfolio of an AIUB CSE student building full-stack applications and multi-tenant SaaS at Byte Innovations. Backend APIs, relational databases, and reinforcement learning research." />
+<meta property="og:title" content="Md. Nazmus Sadat Numan — Software Engineering Portfolio" />
 <meta property="og:description" content="Full-stack applications, multi-tenant SaaS, backend APIs, and reinforcement learning research." />
 <meta property="og:type" content="website" />
 <link rel="icon" href="assets/logo.png" />
@@ -94,11 +94,14 @@
         <span class="ml-1 inline-block h-6 w-[3px] bg-primary animate-blink"></span>
       </div>
       <p class="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
-        Software Engineer and final-year CSE student at AIUB, majoring in Software Engineering. Currently interning at Byte Innovations, independently developing full-stack applications and multi-tenant SaaS systems for HR management, recruitment, and a corporate career portal. Focused on secure backend APIs, relational databases, and collaborative software development.
+        Final-year CSE student focused on Software Engineering at AIUB, majoring in Software Engineering. Currently interning at Byte Innovations, independently developing full-stack applications and multi-tenant SaaS systems for HR management, recruitment, and a corporate career portal. Focused on secure backend APIs, relational databases, and collaborative software development.
       </p>
       <div class="mt-8 flex flex-wrap gap-3">
-        <a href="assets/Nazmus-Sadat-Numan-CV.pdf" download rel="noreferrer" class="group inline-flex items-center gap-2 rounded-xl bg-gradient-primary px-6 py-3 text-sm font-medium text-primary-foreground glow-blue transition-transform hover:scale-105">
-          <svg class="h-4 w-4 transition-transform group-hover:translate-y-0.5"><use href="#i-download"/></svg> Download Resume
+        <button type="button" id="preview-cv" aria-haspopup="dialog" aria-controls="cv-preview" class="inline-flex items-center gap-2 rounded-xl glass px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-surface-elevated">
+          <svg class="h-4 w-4" aria-hidden="true"><use href="#i-arrowup"/></svg> Preview CV
+        </button>
+        <a href="assets/Nazmus-Sadat-Numan-CV.pdf" download="Nazmus-Sadat-Numan-CV.pdf" class="group inline-flex items-center gap-2 rounded-xl bg-gradient-primary px-6 py-3 text-sm font-medium text-primary-foreground glow-blue transition-transform hover:scale-105">
+          <svg class="h-4 w-4 transition-transform group-hover:translate-y-0.5"><use href="#i-download"/></svg> Download CV
         </a>
         <a href="#contact" class="inline-flex items-center gap-2 rounded-xl glass px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-surface-elevated">
           <svg class="h-4 w-4"><use href="#i-mail"/></svg> Contact Me
@@ -120,12 +123,12 @@
       <div class="relative">
         <div class="absolute -inset-4 rounded-3xl bg-gradient-primary opacity-30 blur-2xl animate-glow-pulse"></div>
         <div class="relative overflow-hidden rounded-3xl border border-primary/30 glass animate-float">
-          <img src="assets/numan.png" alt="Md. Nazmus Sadat Numan" class="h-auto w-full" />
+          <img src="assets/numan-professional.png" alt="Md. Nazmus Sadat Numan" class="h-auto w-full" />
           <div class="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent"></div>
         </div>
         <div class="absolute -bottom-4 -left-4 glass rounded-xl px-4 py-3 text-xs">
           <div class="font-mono text-primary">$ whoami</div>
-          <div class="text-muted-foreground">backend.engineer</div>
+          <div class="text-muted-foreground">software.engineering</div>
         </div>
         <div class="absolute -top-4 -right-4 glass rounded-xl px-4 py-3 text-xs">
           <div class="font-mono text-primary">CGPA 3.70</div>
@@ -147,7 +150,7 @@
     </div>
     <div class="grid gap-10 md:grid-cols-[1.1fr_1fr]">
       <div class="space-y-5 text-muted-foreground leading-relaxed">
-        <p>I am a Software Engineer and final-year Computer Science and Engineering student at American International University-Bangladesh, majoring in Software Engineering with a CGPA of 3.70 / 4.00.</p>
+        <p>I am a final-year Computer Science and Engineering student focused on Software Engineering at American International University-Bangladesh, majoring in Software Engineering with a CGPA of 3.70 / 4.00.</p>
         <p>At <span class="text-foreground font-medium">Byte Innovations</span>, I independently develop multi-tenant HR and recruitment systems, and designed, developed, and deployed the company's corporate website and career portal. I also collaborate on selected enhancements to Expert POS.</p>
         <p>My toolkit includes <span class="text-foreground font-medium">Laravel, NestJS, Next.js, React, Vue 3, TypeScript, and relational databases</span>. My academic research explores budget-aware human recognition with reinforcement learning and requirements engineering for remote-first SaaS teams.</p>
       </div>
@@ -212,13 +215,20 @@
       <h2 class="font-display text-4xl font-bold md:text-5xl">Things I've <span class="text-gradient">built</span></h2>
       <p class="mt-4 text-muted-foreground">Professional work, academic projects, and research. Public project cards link to their live site or source code.</p>
     </div>
-    <div class="reveal glass rounded-2xl p-6 mb-14">
+    <section aria-labelledby="professional-projects-title" class="mb-14">
+    <div class="reveal glass rounded-2xl p-6 mb-5">
       <div class="text-xs font-mono uppercase tracking-wider text-primary">Professional Experience · Dhaka, Bangladesh</div>
-      <h3 class="mt-2 font-display text-xl font-bold">Software Engineering Intern · Byte Innovations</h3>
+      <h3 id="professional-projects-title" class="mt-2 font-display text-xl font-bold">Byte Innovations · Professional Projects</h3>
+      <p class="mt-2 text-sm text-foreground">Software Engineering Intern</p>
       <p class="mt-2 text-sm text-muted-foreground">1 September – 30 November 2026 · Three-month internship</p>
       <p class="mt-4 text-sm leading-relaxed text-muted-foreground">Independent development of full-stack applications and multi-tenant SaaS systems, alongside team contributions to business management software.</p>
     </div>
-    <div class="grid gap-6 md:grid-cols-2" id="projects-grid"></div>
+    <div class="grid gap-6 md:grid-cols-2" id="professional-projects-grid"></div>
+    </section>
+    <section aria-labelledby="academic-projects-title">
+      <h3 id="academic-projects-title" class="mb-5 font-display text-xl font-bold">Academic Projects</h3>
+      <div class="grid gap-6 md:grid-cols-2" id="projects-grid"></div>
+    </section>
     <h3 class="mt-8 mb-5 font-display text-xl font-bold">Research Experience</h3>
     <div class="grid gap-6 md:grid-cols-2">
       <article class="reveal glass rounded-2xl p-6">
@@ -265,10 +275,10 @@
     <div class="reveal mb-14 max-w-2xl">
       <div class="mb-3 inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.25em] text-primary"><span class="h-px w-8 bg-primary"></span> Get in touch</div>
       <h2 class="font-display text-4xl font-bold md:text-5xl">Let's <span class="text-gradient">build</span> something</h2>
-      <p class="mt-4 text-muted-foreground">Have a backend project, role, or collaboration in mind? I'd love to hear from you.</p>
+      <p class="mt-4 text-muted-foreground">Have a software engineering project, role, or collaboration in mind? I'd love to hear from you.</p>
     </div>
-    <div class="grid gap-8 max-w-2xl">
-      <div class="min-w-0 space-y-4">
+    <div class="contact-layout">
+      <div class="contact-cards">
         <a href="mailto:nazmussadatnuman92@gmail.com" class="group glass flex items-center gap-4 rounded-2xl p-5 transition-all hover:border-primary/40 hover:-translate-y-0.5">
           <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground"><svg class="h-5 w-5"><use href="#i-mail"/></svg></div>
           <div class="min-w-0"><div class="text-xs uppercase tracking-wider text-muted-foreground">Email</div><div class="truncate text-foreground">nazmussadatnuman92@gmail.com</div></div>
@@ -306,7 +316,7 @@
           <img src="assets/logo.png" alt="Sadat Numan" class="h-9 w-9 object-contain" />
           Md. Nazmus Sadat Numan
         </div>
-        <p class="mt-2 text-sm text-muted-foreground">Backend Software Engineer</p>
+        <p class="mt-2 text-sm text-muted-foreground">Software Engineering</p>
       </div>
       <div class="flex gap-3">
         <a href="https://github.com/sadatnuman" target="_blank" rel="noreferrer" class="flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-surface text-muted-foreground transition-colors hover:border-primary hover:text-primary"><svg class="h-4 w-4"><use href="#i-github"/></svg></a>
@@ -322,6 +332,17 @@
   </div>
 </footer>
 
+<dialog id="cv-preview" aria-labelledby="cv-preview-title">
+  <div class="cv-preview-toolbar">
+    <h2 id="cv-preview-title" class="font-display font-semibold">CV Preview</h2>
+    <div class="flex items-center gap-3">
+      <a href="assets/Nazmus-Sadat-Numan-CV.pdf" download="Nazmus-Sadat-Numan-CV.pdf" class="rounded-lg bg-gradient-primary px-4 py-2 text-sm font-medium text-primary-foreground">Download CV</a>
+      <button type="button" id="close-cv" class="rounded-lg border border-border px-4 py-2 text-sm" aria-label="Close CV preview">Close</button>
+    </div>
+  </div>
+  <iframe id="cv-preview-frame" title="Nazmus Sadat Numan CV" data-src="assets/Nazmus-Sadat-Numan-CV.pdf"></iframe>
+  <p class="cv-preview-help">If your browser cannot display the PDF, use Download CV to read it.</p>
+</dialog>
 <script src="script.js"></script>
 </body>
 </html>
