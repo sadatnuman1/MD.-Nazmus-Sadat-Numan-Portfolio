@@ -84,19 +84,53 @@ const PROJECTS = [
 {"title": "Byte Innovations Corporate Website", "category": "Professional \u00b7 Live", "stack": ["Next.js 16", "React 19", "JavaScript", "MongoDB Atlas", "Nodemailer", "Vercel"], "desc": "Independently designed, developed, and deployed a responsive corporate website with services, portfolio showcases, and Google Analytics. Built dynamic MongoDB job listings, career applications with resume uploads, validated contact forms, and SMTP email notifications.", "highlights": ["Independent Delivery", "Career Portal", "Resume Uploads", "SMTP Notifications"], "href": "https://www.b-innovations.com/", "linkLabel": "Live site"},
 {"title": "Expert POS", "category": "Professional \u00b7 Team Collaboration", "stack": ["Laravel", "PHP", "MySQL", "JavaScript"], "desc": "Contributed to selected development tasks and enhancements in a shared Laravel-based POS and business management application. Collaborated with team members on sales, inventory, purchasing, accounting, and multi-location operations.", "highlights": ["Team Collaboration", "Sales & Inventory", "Business Management", "Multi-location Operations"], "href": "https://expertpos.xyz/", "linkLabel": "Live site"},
   {
-  title:"Solix Clothing Brand Full-Stack E-commerce Platform",
-  category:"Full-Stack · E-commerce",
-  stack:["NestJS","Next.js","React","TypeScript","PostgreSQL","JWT"],
-  desc:"Full-stack e-commerce platform featuring a NestJS REST API and Next.js + React frontend. Implements JWT authentication, role-based access control, normalized PostgreSQL schema, complete cart-to-order lifecycle, and multi-method payment workflows.",
-  highlights:[
-    "Full-Stack Architecture",
-    "JWT Authentication & RBAC",
-    "PostgreSQL Database Design",
-    "Cart, Order & Payment Workflow",
-    "Admin Analytics Dashboard",
-    "Production-Ready"
+  "title": "Solix — Clothing E-commerce for Bangladesh",
+  "category": "Full-Stack · E-commerce Demo",
+  "stack": [
+    "Next.js 16",
+    "React 19",
+    "NestJS 11",
+    "TypeScript",
+    "MongoDB Atlas",
+    "Mongoose",
+    "Cloudinary",
+    "Netlify",
+    "Render"
   ],
-  href:"https://github.com/sadatnuman/Solix-Clothing-Brand.git"
+  "desc": "I built Solix to cover the full shopping journey, from finding a product to checkout, order tracking and after-sales support. I designed and developed the storefront, backend API, MongoDB database architecture, role-based admin studio and deployment.",
+  "highlights": [
+    "Product Discovery & Variants",
+    "Server-Calculated Checkout",
+    "Order Tracking & Aftercare",
+    "Role-Based Admin Studio"
+  ],
+  "href": "https://github.com/sadatnuman/Solix-Clothing-Brand",
+  "liveHref": "https://solix-bangladesh.netlify.app",
+  "thumbnail": "assets/solix-preview.png",
+  "customerFeatures": [
+    "Responsive shopping on mobile, tablet and desktop",
+    "Product search and suggestions, sorting and pagination",
+    "Filters for category, collection, colour, size, price and stock",
+    "Product galleries with colour and size variants",
+    "SKU and stock indicators, size guide, material, fit and care details",
+    "Guest cart, account-based wishlist and recently viewed products",
+    "Saved addresses and secure account management",
+    "Coupon validation and server-calculated checkout",
+    "Cash on Delivery and manual bKash / Nagad Send Money verification",
+    "Order history, status timeline and courier tracking",
+    "Cancellation, return and size-exchange requests",
+    "In-app notifications and customer support inbox"
+  ],
+  "adminFeatures": [
+    "Customer, Staff and Admin roles",
+    "Product, variant, category and collection management",
+    "Cloudinary image uploads",
+    "Inventory adjustments and low-stock monitoring",
+    "Order fulfilment and manual payment verification",
+    "Coupon, review, return and support management",
+    "Staff permissions, store settings and audit logs"
+  ],
+  "hostingNote": "This demo runs on free-tier services. After inactivity, the Render backend may take around a minute to respond to the first request."
 },
   {
   title:"NewsArchive ASP.NET Core MVC System",
@@ -229,8 +263,11 @@ PROJECTS.forEach(p => {
   const projRoot = $(p.category.startsWith("Professional") ? "#professional-projects-grid" : "#projects-grid");
   const highlights = p.highlights.slice(0,4).map(h=>`<span class="rounded-md bg-primary/10 px-2 py-1 text-[11px] font-medium text-primary">${h}</span>`).join("");
   const stack = p.stack.map(s=>`<span class="rounded border border-border px-2 py-0.5 text-[11px] text-muted-foreground">${s}</span>`).join("");
+  const cardTag = p.liveHref ? "article" : p.href ? "a" : "article";
   projRoot.appendChild(el(`
-    <${p.href ? 'a' : 'article'} ${p.href ? `href="${p.href}" target="_blank" rel="noreferrer"` : ''} class="reveal group relative flex flex-col overflow-hidden rounded-2xl glass p-6 transition-all hover:-translate-y-1.5 hover:border-primary/50">
+    <${cardTag} ${!p.liveHref && p.href ? `href="${p.href}" target="_blank" rel="noreferrer"` : ''} class="reveal group relative flex flex-col overflow-hidden rounded-2xl glass p-6 transition-all hover:-translate-y-1.5 hover:border-primary/50">
+      ${p.liveHref ? `<a href="${p.liveHref}" target="_blank" rel="noopener noreferrer" class="solix-live-link"><svg class="h-4 w-4" aria-hidden="true"><use href="#i-arrowup"/></svg> Live Demo · solix-bangladesh.netlify.app</a>` : ''}
+      ${p.thumbnail ? `<a href="${p.liveHref}" target="_blank" rel="noopener noreferrer" class="solix-thumbnail" aria-label="Open Solix live demo"><img src="${p.thumbnail}" alt="Solix Bangladesh royal fashion collection" width="1200" height="627" loading="lazy" /></a>` : ''}
       <div class="pointer-events-none absolute -top-24 -right-24 h-48 w-48 rounded-full bg-primary/0 blur-3xl transition-all duration-500 group-hover:bg-primary/30"></div>
       <div class="relative flex items-start justify-between gap-3">
         <div>
@@ -243,13 +280,20 @@ PROJECTS.forEach(p => {
       </div>
       <p class="relative mt-4 text-sm leading-relaxed text-muted-foreground">${p.desc}</p>
       <div class="relative mt-5 flex flex-wrap gap-1.5">${highlights}</div>
+      ${p.customerFeatures ? `<details class="solix-features relative mt-5 text-sm text-muted-foreground">
+        <summary class="text-primary font-medium">Explore customer &amp; admin features</summary>
+        <h4 class="mt-4 font-semibold text-foreground">Customer experience</h4>
+        <ul>${p.customerFeatures.map(f => `<li>${f}</li>`).join('')}</ul>
+        <h4 class="mt-4 font-semibold text-foreground">Admin &amp; staff</h4>
+        <ul>${p.adminFeatures.map(f => `<li>${f}</li>`).join('')}</ul>
+      </details><p class="relative mt-4 text-xs leading-relaxed text-muted-foreground">${p.hostingNote}</p>` : ''}
       <div class="relative mt-5 flex items-center justify-between border-t border-border pt-4">
         <div class="flex flex-wrap gap-1.5">${stack}</div>
-        <span class="flex items-center gap-1.5 text-xs text-muted-foreground transition-colors group-hover:text-primary">
-          <svg class="h-4 w-4"><use href="#${(p.linkLabel === 'Live site' || p.linkLabel === 'Visit site') ? 'i-arrowup' : p.href ? 'i-github' : 'i-code2'}"/></svg> ${p.linkLabel || 'Source'}
-        </span>
+        <${p.liveHref ? 'a' : 'span'} ${p.liveHref ? `href="${p.href}" target="_blank" rel="noopener noreferrer" aria-label="Solix source code on GitHub"` : ''} class="flex items-center gap-1.5 text-xs text-muted-foreground transition-colors group-hover:text-primary">
+          <svg class="h-4 w-4"><use href="#${(p.linkLabel === 'Live site' || p.linkLabel === 'Visit site') ? 'i-arrowup' : p.href ? 'i-github' : 'i-code2'}"/></svg> ${p.liveHref ? 'GitHub' : p.linkLabel || 'Source'}
+        </${p.liveHref ? 'a' : 'span'}>
       </div>
-    </${p.href ? 'a' : 'article'}>`));
+    </${cardTag}>`));
 });
 
 // ---------- Render: Timeline ----------
