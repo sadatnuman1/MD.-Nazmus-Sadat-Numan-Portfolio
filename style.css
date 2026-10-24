@@ -17,3 +17,14 @@ html.cv-preview-open { overflow: hidden; }
 .contact-cards > * { min-width: 0; }
 .contact-cards .truncate { white-space: normal; overflow-wrap: anywhere; }
 @media (max-width: 639px) { .contact-cards { grid-template-columns: minmax(0, 1fr); gap: 16px; } }
+
+/* Solix: independent demo and repository links, with optional feature details. */
+.solix-live-link { display: flex; align-items: center; gap: 8px; position: relative; align-self: flex-start; margin-bottom: 20px; color: var(--primary); font-size: 13px; font-weight: 600; overflow-wrap: anywhere; }
+.solix-live-link svg { flex-shrink: 0; }
+.solix-live-link:hover { text-decoration: underline; }
+.solix-features summary { cursor: pointer; }
+.solix-features ul { list-style: disc; padding-left: 20px; margin-top: 10px; }
+.solix-features li + li { margin-top: 6px; }
+
+.solix-thumbnail { display: block; position: relative; margin-bottom: 20px; border-radius: 12px; overflow: hidden; }
+.solix-thumbnail img { display: block; width: 100%; height: auto; }
