@@ -79,10 +79,10 @@ const PROFICIENCY = [
   ["NLP & Machine Learning", 78],
 ];
 const PROJECTS = [
-{"title": "Expert HRMS (SHOCHOL)", "category": "Professional \u00b7 Ongoing Development", "stack": ["Laravel 12", "Vue 3", "TypeScript", "MySQL", "Docker", "Cloudflare"], "desc": "Independently developing a multi-tenant HRMS with isolated tenant databases, subdomain-based workspaces, and role-based authorization. Implementing employee management, attendance, leave approvals, payroll, income-tax processing, audit logs, and secure PDF documents.", "highlights": ["Multi-tenant HRMS", "Isolated Tenant Databases", "Payroll & Income Tax", "Role-based Authorization"], "href": "https://shochol.xyz/", "linkLabel": "Live site"},
-{"title": "Expert ATS", "category": "Professional \u00b7 Ongoing Development", "stack": ["Next.js 16", "React 19", "NestJS 12", "TypeScript", "PostgreSQL", "Prisma"], "desc": "Independently building a multi-tenant applicant tracking platform with organization workspaces, job publishing, recruitment pipelines, and permission-based access. Developing secure REST APIs, candidate profiles, resume processing, and consent-aware AI-assisted recruitment and shortlisting.", "highlights": ["Organization Workspaces", "Recruitment Pipelines", "Secure REST APIs", "Consent-aware AI"], "href": "https://expertats.b-innovations.com/", "linkLabel": "Visit site"},
-{"title": "Byte Innovations Corporate Website", "category": "Professional \u00b7 Live", "stack": ["Next.js 16", "React 19", "JavaScript", "MongoDB Atlas", "Nodemailer", "Vercel"], "desc": "Independently designed, developed, and deployed a responsive corporate website with services, portfolio showcases, and Google Analytics. Built dynamic MongoDB job listings, career applications with resume uploads, validated contact forms, and SMTP email notifications.", "highlights": ["Independent Delivery", "Career Portal", "Resume Uploads", "SMTP Notifications"], "href": "https://www.b-innovations.com/", "linkLabel": "Live site"},
-{"title": "Expert POS", "category": "Professional \u00b7 Team Collaboration", "stack": ["Laravel", "PHP", "MySQL", "JavaScript"], "desc": "Contributed to selected development tasks and enhancements in a shared Laravel-based POS and business management application. Collaborated with team members on sales, inventory, purchasing, accounting, and multi-location operations.", "highlights": ["Team Collaboration", "Sales & Inventory", "Business Management", "Multi-location Operations"], "href": "https://expertpos.xyz/", "linkLabel": "Live site"},
+{"title": "Expert HRMS (SHOCHOL)", "category": "Professional \u00b7 Ongoing Development", "stack": ["Laravel 12", "Vue 3", "TypeScript", "MySQL", "Docker", "Cloudflare"], "desc": "Independently developing a multi-tenant HRMS with isolated tenant databases, subdomain-based workspaces, and role-based authorization. Implementing employee management, attendance, leave approvals, payroll, income-tax processing, audit logs, and secure PDF documents.", "highlights": ["Multi-tenant HRMS", "Isolated Tenant Databases", "Payroll & Income Tax", "Role-based Authorization"], "href": "https://shochol.xyz/", "linkLabel": "Live site", "thumbnail": "assets/shochol-preview.png", "thumbnailAlt": "SHOCHOL by Byte Innovations \u2014 a simpler way to a stronger workplace", "thumbnailWidth": 1983, "thumbnailHeight": 793},
+{"title": "Expert ATS", "category": "Professional \u00b7 Ongoing Development", "stack": ["Next.js 16", "React 19", "NestJS 12", "TypeScript", "PostgreSQL", "Prisma"], "desc": "Independently building a multi-tenant applicant tracking platform with organization workspaces, job publishing, recruitment pipelines, and permission-based access. Developing secure REST APIs, candidate profiles, resume processing, and consent-aware AI-assisted recruitment and shortlisting.", "highlights": ["Organization Workspaces", "Recruitment Pipelines", "Secure REST APIs", "Consent-aware AI"], "href": "https://expertats.b-innovations.com/", "linkLabel": "Visit site", "thumbnail": "assets/expert-ats-preview.png", "thumbnailAlt": "Expert ATS \u2014 applicant tracking system for Bangladesh", "thumbnailWidth": 1200, "thumbnailHeight": 630},
+{"title": "Byte Innovations Corporate Website", "category": "Professional \u00b7 Live", "stack": ["Next.js 16", "React 19", "JavaScript", "MongoDB Atlas", "Nodemailer", "Vercel"], "desc": "Independently designed, developed, and deployed a responsive corporate website with services, portfolio showcases, and Google Analytics. Built dynamic MongoDB job listings, career applications with resume uploads, validated contact forms, and SMTP email notifications.", "highlights": ["Independent Delivery", "Career Portal", "Resume Uploads", "SMTP Notifications"], "href": "https://www.b-innovations.com/", "linkLabel": "Live site", "thumbnail": "assets/byte-innovations-preview.png", "thumbnailAlt": "Byte Innovations \u2014 Build Beyond Limits", "thumbnailWidth": 1672, "thumbnailHeight": 941},
+{"title": "Expert POS", "category": "Professional \u00b7 Team Collaboration", "stack": ["Laravel", "PHP", "MySQL", "JavaScript"], "desc": "Contributed to selected development tasks and enhancements in a shared Laravel-based POS and business management application. Collaborated with team members on sales, inventory, purchasing, accounting, and multi-location operations.", "highlights": ["Team Collaboration", "Sales & Inventory", "Business Management", "Multi-location Operations"], "href": "https://expertpos.xyz/", "linkLabel": "Live site", "thumbnail": "assets/expert-pos-preview.png", "thumbnailAlt": "Expert POS \u2014 sales, inventory, purchasing and expense management", "thumbnailWidth": 2187, "thumbnailHeight": 1705},
   {
   "title": "Solix — Clothing E-commerce for Bangladesh",
   "category": "Full-Stack · E-commerce Demo",
@@ -133,6 +133,72 @@ const PROJECTS = [
   "hostingNote": "This demo runs on free-tier services. After inactivity, the Render backend may take around a minute to respond to the first request."
 },
   {
+  "title": "Doctor Tracker — Online Doctor Appointment Platform",
+  "category": "Full-Stack · Healthcare Demo",
+  "stack": [
+    "Next.js 16",
+    "React 19",
+    "TypeScript",
+    "Tailwind CSS",
+    "shadcn/ui",
+    "TanStack Query",
+    "Recharts",
+    "Node.js",
+    "Express",
+    "MongoDB Atlas",
+    "Mongoose",
+    "Zod",
+    "Playwright",
+    "Vitest",
+    "Vercel",
+    "Render"
+  ],
+  "desc": "Clinics often keep doctor rosters and patient records in spreadsheets, while patients still call the front desk to find a free slot. I built Doctor Tracker to bring those workflows together in one bilingual appointment platform for admins, doctors and patients.",
+  "highlights": [
+    "Three Roles, One Sign-In",
+    "Five-Minute Slot Holds",
+    "English & Bangla",
+    "Simulated Payments"
+  ],
+  "href": "https://github.com/sadatnuman/doctor-tracker-frontend",
+  "liveHref": "https://doctor-tracker-gamma-seven.vercel.app",
+  "thumbnail": "assets/doctor-tracker-preview.png",
+  "thumbnailAlt": "Doctor Tracker — book a doctor appointment online in Bangladesh",
+  "thumbnailHeight": 630,
+  "sourceLinks": [
+    {
+      "label": "Frontend",
+      "href": "https://github.com/sadatnuman/doctor-tracker-frontend"
+    },
+    {
+      "label": "Backend",
+      "href": "https://github.com/sadatnuman/doctor-tracker-backend"
+    }
+  ],
+  "featureSections": [
+    {
+      "title": "Three roles, one sign-in page",
+      "items": [
+        "Admin: manages doctors and patients with search, filters and pagination across thousands of records, plus an analytics dashboard.",
+        "Doctor: views schedules and bookings, manages their own patient list, and sets consulting hours.",
+        "Patient: browses doctors by specialty, books a time slot and tries the simulated payment flow."
+      ]
+    },
+    {
+      "title": "Some parts I enjoyed solving",
+      "items": [
+        "Five-minute slot holds during payment, with automatic release after expiry and database constraints to prevent simultaneous double-booking.",
+        "Simulated card, bKash and Nagad payments, including receipts and refunds.",
+        "English and Bangla throughout the app, including Bengali numbers and dates.",
+        "Short-lived tokens in secure cookies, automatic refresh and role-based access checks on every request.",
+        "MongoDB indexes supporting search, filters and pagination without unnecessary full-collection scans.",
+        "Search-engine-friendly public pages and preview cards for shared links.",
+        "Automated tests with Playwright and Vitest; frontend deployed on Vercel and backend on Render."
+      ]
+    }
+  ]
+},
+  {
   title:"NewsArchive ASP.NET Core MVC System",
   category:"Backend · Web Application",
   stack:["ASP.NET Core MVC","C#","SQL Server","Entity Framework"],
@@ -177,7 +243,7 @@ const PROJECTS = [
     href:"https://github.com/sadatnuman/Vidyasagar-Book-Store-Management-System" },
 ];
 const TIMELINE = [
-  { school:"American International University-Bangladesh (AIUB)", degree:"BSc in Computer Science & Engineering", meta:"Final Year · Major: Software Engineering · CGPA 3.70 / 4.00", location:"Dhaka, Bangladesh", period:"2026" },
+  { school:"American International University-Bangladesh (AIUB)", degree:"BSc in Computer Science & Engineering", meta:"Coursework completed · Internship ongoing · Major: Software Engineering · CGPA 3.70 / 4.00", location:"Dhaka, Bangladesh", period:"2026" },
   { school:"Trust College, Uttara", degree:"Higher Secondary Certificate (Science)", meta:"GPA 5.00 / 5.00", location:"Dhaka, Bangladesh", period:"2021" },
   { school:"Pangsha Government George Model High School", degree:"Secondary School Certificate (Science)", meta:"GPA 4.61 / 5.00", location:"Pangsha, Bangladesh", period:"2019" },
 ];
@@ -266,8 +332,8 @@ PROJECTS.forEach(p => {
   const cardTag = p.liveHref ? "article" : p.href ? "a" : "article";
   projRoot.appendChild(el(`
     <${cardTag} ${!p.liveHref && p.href ? `href="${p.href}" target="_blank" rel="noreferrer"` : ''} class="reveal group relative flex flex-col overflow-hidden rounded-2xl glass p-6 transition-all hover:-translate-y-1.5 hover:border-primary/50">
-      ${p.liveHref ? `<a href="${p.liveHref}" target="_blank" rel="noopener noreferrer" class="solix-live-link"><svg class="h-4 w-4" aria-hidden="true"><use href="#i-arrowup"/></svg> Live Demo · solix-bangladesh.netlify.app</a>` : ''}
-      ${p.thumbnail ? `<a href="${p.liveHref}" target="_blank" rel="noopener noreferrer" class="solix-thumbnail" aria-label="Open Solix live demo"><img src="${p.thumbnail}" alt="Solix Bangladesh royal fashion collection" width="1200" height="627" loading="lazy" /></a>` : ''}
+      ${p.liveHref ? `<a href="${p.liveHref}" target="_blank" rel="noopener noreferrer" class="solix-live-link"><svg class="h-4 w-4" aria-hidden="true"><use href="#i-arrowup"/></svg> Live Demo · ${new URL(p.liveHref).hostname}</a>` : ''}
+      ${p.thumbnail ? `<${p.liveHref ? 'a' : 'div'} ${p.liveHref ? `href="${p.liveHref}" target="_blank" rel="noopener noreferrer" aria-label="Open ${p.title} live demo"` : ''} class="solix-thumbnail"><img src="${p.thumbnail}" alt="${p.thumbnailAlt || 'Solix Bangladesh royal fashion collection'}" width="${p.thumbnailWidth || 1200}" height="${p.thumbnailHeight || 627}" loading="lazy" /></${p.liveHref ? 'a' : 'div'}>` : ''}
       <div class="pointer-events-none absolute -top-24 -right-24 h-48 w-48 rounded-full bg-primary/0 blur-3xl transition-all duration-500 group-hover:bg-primary/30"></div>
       <div class="relative flex items-start justify-between gap-3">
         <div>
@@ -287,11 +353,13 @@ PROJECTS.forEach(p => {
         <h4 class="mt-4 font-semibold text-foreground">Admin &amp; staff</h4>
         <ul>${p.adminFeatures.map(f => `<li>${f}</li>`).join('')}</ul>
       </details><p class="relative mt-4 text-xs leading-relaxed text-muted-foreground">${p.hostingNote}</p>` : ''}
+      ${p.featureSections ? `<details class="solix-features relative mt-5 text-sm text-muted-foreground"><summary class="text-primary font-medium">Explore roles &amp; implementation</summary>${p.featureSections.map(section => `<h4 class="mt-4 font-semibold text-foreground">${section.title}</h4><ul>${section.items.map(item => `<li>${item}</li>`).join('')}</ul>`).join('')}</details>` : ''}
       <div class="relative mt-5 flex items-center justify-between border-t border-border pt-4">
         <div class="flex flex-wrap gap-1.5">${stack}</div>
-        <${p.liveHref ? 'a' : 'span'} ${p.liveHref ? `href="${p.href}" target="_blank" rel="noopener noreferrer" aria-label="Solix source code on GitHub"` : ''} class="flex items-center gap-1.5 text-xs text-muted-foreground transition-colors group-hover:text-primary">
+        ${p.sourceLinks ? `<div class="project-source-links">${p.sourceLinks.map(link => `<a href="${link.href}" target="_blank" rel="noopener noreferrer" class="text-xs text-primary" aria-label="${p.title} ${link.label} source code"><svg class="h-4 w-4" aria-hidden="true"><use href="#i-github"/></svg>${link.label}</a>`).join('')}</div>` : `        <${p.liveHref ? 'a' : 'span'} ${p.liveHref ? `href="${p.href}" target="_blank" rel="noopener noreferrer" aria-label="${p.title} source code on GitHub"` : ''} class="flex items-center gap-1.5 text-xs text-muted-foreground transition-colors group-hover:text-primary">
           <svg class="h-4 w-4"><use href="#${(p.linkLabel === 'Live site' || p.linkLabel === 'Visit site') ? 'i-arrowup' : p.href ? 'i-github' : 'i-code2'}"/></svg> ${p.liveHref ? 'GitHub' : p.linkLabel || 'Source'}
-        </${p.liveHref ? 'a' : 'span'}>
+        </${p.liveHref ? 'a' : 'span'}>`}
+
       </div>
     </${cardTag}>`));
 });

@@ -28,3 +28,7 @@ html.cv-preview-open { overflow: hidden; }
 
 .solix-thumbnail { display: block; position: relative; margin-bottom: 20px; border-radius: 12px; overflow: hidden; }
 .solix-thumbnail img { display: block; width: 100%; height: auto; }
+
+.project-source-links { display: flex; flex-direction: column; gap: 10px; padding-left: 12px; flex-shrink: 0; }
+.project-source-links a { display: inline-flex; align-items: center; gap: 5px; }
+.project-source-links a:hover { text-decoration: underline; }
